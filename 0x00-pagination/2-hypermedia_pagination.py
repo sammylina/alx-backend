@@ -58,7 +58,7 @@ class Server:
                 'page': page,
                 'data': data,
                 'next_page': None,
-                'prev_page': page - 1,
+                'prev_page': page - 1 or None
                 'total_pages': total_pages
                 }
 
