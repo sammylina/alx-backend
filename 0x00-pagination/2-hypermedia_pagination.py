@@ -50,7 +50,6 @@ class Server:
         """hyper pagination loader
         """
         data = self.get_page(page, page_size)
-        _, end_idx = index_range(page, page_size)
         total_pages = math.ceil(len(self.dataset()) / page_size)
         if len(data) == 0:
             return {
@@ -58,7 +57,7 @@ class Server:
                 'page': page,
                 'data': data,
                 'next_page': None,
-                'prev_page': page - 1 or None
+                'prev_page': page - 1 or None,
                 'total_pages': total_pages
                 }
 
@@ -66,7 +65,7 @@ class Server:
              'page_size': page_size,
              'page': page,
              'data': data,
-             'next_page': end_idx if end_idx < len(self.dataset()) else None,
+             'next_page': page + 1,
              'prev_page': page - 1 or None,
              'total_pages': total_pages
              }
