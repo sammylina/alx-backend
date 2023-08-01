@@ -13,7 +13,7 @@ app = Flask(__name__)
 def home():
     """root route for the app
     """
-    return render_template('index.html')
+    return render_template('0-index.html')
 
 
 if __name__ == '__main__':
