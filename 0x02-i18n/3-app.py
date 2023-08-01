@@ -5,6 +5,7 @@
 
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
+from typing import Union
 
 
 app = Flask(__name__)
@@ -31,7 +32,7 @@ def home():
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> Union[str, None]:
     """choose the best language for user from those we support
     """
     return request.accept_languages.best_match(Config.LANGUAGES)
