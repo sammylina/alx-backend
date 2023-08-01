@@ -27,7 +27,7 @@ dir(babel)
 def home():
     """root route for the app
     """
-    return render_template('0-index.html')
+    return render_template('2-index.html')
 
 
 @babel.localeselector
