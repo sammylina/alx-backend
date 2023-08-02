@@ -32,7 +32,7 @@ def home() -> str:
 
 @babel.localeselector
 def get_locale() -> Union[str, None]:
-    """choose the best language for user from those we support
+    """ get local language
     """
     return request.accept_languages.best_match(Config.LANGUAGES)
 
