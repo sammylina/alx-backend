@@ -31,7 +31,7 @@ def home():
 
 
 @babel.localeselector
-def get_locale() -> Union[str, None]:
+def get_locale():
     """choose the best language for user from those we support
     """
     lang = request.args.get('locale')
