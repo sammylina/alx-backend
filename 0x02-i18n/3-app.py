@@ -24,7 +24,7 @@ babel = Babel(app)
 
 
 @app.route('/')
-def home():
+def home() -> str:
     """root route for the app
     """
     return render_template('3-index.html')
@@ -38,4 +38,4 @@ def get_locale() -> Union[str, None]:
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(host='0.0.0.0', port='5000')
